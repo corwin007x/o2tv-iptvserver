@@ -1,11 +1,13 @@
 services:
   o2tv-iptvserver:
     container_name: o2tv-iptvserver
-    image: ghcr.io/goodbyepavlyi/o2tv-iptvserver:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
-      - 3000:3000
+      - 3000:3002
     volumes:
-      - ./Data:/app/Data
+      - ./Data:/mnt/user/appdata/o2tv-proxy
     env_file:
       - .env
     restart: "unless-stopped"
