@@ -8,6 +8,4 @@ services:
       - 3000:3002
     volumes:
       - ./Data:/mnt/user/appdata/o2tv-proxy
-    env_file:
-      - .env
     restart: "unless-stopped"
